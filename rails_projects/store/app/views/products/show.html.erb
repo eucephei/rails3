@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <strong>Name:</strong>
   <%= @product.name %>
 </p>
 
@@ -13,12 +13,12 @@
 <% end %>
 
 <p>
-  <b>Price:</b>
-  <%= @product.price %>
+  <strong>Price:</strong>
+  <%= number_to_currency @product.price %>
 </p>
 
-<p>
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to "Destroy", @product, :confirm => "Are you sure?", :method => :delete %> |
-<%= link_to 'Back', products_path %>
-</p>
+<%= admin_area do %>
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to "Destroy", @product, :confirm => "Are you sure?", :method => :delete %> |
+  <%= link_to 'Back', products_path %>
+<% end %>
