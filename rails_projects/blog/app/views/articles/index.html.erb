@@ -1,0 +1,20 @@
+<% title "Articles" %>
+
+<div id="articles">
+<% for article in @articles %>	
+  <h2>
+   <%= link_to h(article.name), article %>
+   <span class="comments">
+	(<%= pluralize(article.comments.size, 'comment') %>)
+   </span> 
+  </h2>
+  <div class="author">
+	from <%=h article.author_name %> 
+	on <%= article.published_on.strftime('%b %d %Y') %>
+  </div>
+<% end %>
+</div>
+
+<p>
+  <%= link_to 'New Article', new_article_path %>
+</p>
