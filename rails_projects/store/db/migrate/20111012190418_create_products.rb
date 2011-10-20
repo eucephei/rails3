@@ -3,7 +3,7 @@ class CreateProducts < ActiveRecord::Migration
     create_table :products do |t|
       t.integer :category_id
       t.string :name
-      t.decimal :price
+      t.decimal :price, :decimal, :precision => 8, :scale => 2
       t.text :description
 
       t.timestamps

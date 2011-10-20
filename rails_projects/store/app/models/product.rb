@@ -1,6 +1,9 @@
 class Product < ActiveRecord::Base
   belongs_to :category
-  
+
+  scope :cheaper_than, lambda { |price=50| where("price < ?", price) }
+  scope :cheap, cheaper_than(30)
+
   def self.search(params)
     # where("name like ?", "%#{params}%")
     products = scoped
@@ -10,4 +13,5 @@ class Product < ActiveRecord::Base
     products
   end
   
+    
 end
