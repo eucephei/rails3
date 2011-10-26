@@ -1,9 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
 
 one:
-  shipping_name: MyString
-  billing_name: MyString
+  cart_id: 1
+  ip_address: MyString
+  first_name: MyString
+  last_name: MyString
+  card_type: MyString
+  card_expires_on: 2011-10-26
 
 two:
-  shipping_name: MyString
-  billing_name: MyString
+  cart_id: 1
+  ip_address: MyString
+  first_name: MyString
+  last_name: MyString
+  card_type: MyString
+  card_expires_on: 2011-10-26

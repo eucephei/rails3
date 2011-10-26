@@ -1,7 +1,10 @@
 Store::Application.routes.draw do
+  # resources :order_transactions
+  resources :line_items
+  resources :carts
   resources :orders
-  resources :categories
   resources :products
+  resources :categories
   
   root :to => "products#index"
 

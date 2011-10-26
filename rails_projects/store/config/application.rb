@@ -39,5 +39,8 @@ module Store
     # Enable the asset pipeline
     config.assets.enabled = false
     
+    # Enable PDFKit
+    config.middleware.use "PDFKit::Middleware", :print_media_type => true
+    
   end
 end
