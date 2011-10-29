@@ -1,14 +1,11 @@
 Store::Application.routes.draw do
-  # resources :order_transactions
-  resources :line_items
-  resources :carts
   resources :orders
   resources :products
   resources :categories
   
   match "/p/:id" => redirect("/products/%{id}")
   match "/p" => redirect("/prod")
-  match "/prod" =>  "Products#index"
+  match "/prod" => "Products#index"
   
   root :to =>  "products#index"
 
