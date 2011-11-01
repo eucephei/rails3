@@ -1,8 +1,11 @@
 class OrdersController < ApplicationController
+  
+  helper_method :sort_column, :sort_direction
+  
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.order("purchased_at desc").paginate(:per_page => 20, :page => params[:page])
+    @orders = Order.order(sort_column + " " + sort_direction).paginate(:per_page => 20, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +82,15 @@ class OrdersController < ApplicationController
       format.html { redirect_to orders_url }
       format.json { head :ok }
     end
+  end
+  
+  private
+  
+  def sort_column
+    Order.column_names.include?(params[:sort]) ? params[:sort] : "total_price"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end

@@ -41,10 +41,10 @@
 
 <table class="pretty">
   <tr>
-    <th>Number</th>
-    <th>Purchased</th>
-    <th>Shipping</th>
-    <th>Total</th>
+    <th><%= sortable "id", "Number" %></th>
+    <th><%= sortable "purchased_at", "Purchased" %></th>
+    <th><%= sortable "shipping" %></th>
+    <th><%= sortable "total_price", "Total" %></th>
   </tr>
   <% for order in @orders %>
     <tr>
