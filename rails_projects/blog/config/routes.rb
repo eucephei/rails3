@@ -1,8 +1,11 @@
 Blog::Application.routes.draw do
+  resources :hosts
   resources :articles
   resources :comments
   
-  root :to => "articles#index"
+  #c onstraints(Subdomain) do match '/' => 'hosts#show' end
+  match '/' => 'hosts#show', :constraints => { :subdomain => /.+/ }  
+  root :to => 'hosts#index'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

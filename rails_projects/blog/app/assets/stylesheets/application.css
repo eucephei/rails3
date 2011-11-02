@@ -85,6 +85,10 @@ body {
   font-weight: bold;
 }
 
+.comment:last-child {
+  border-bottom: none;
+}
+
 .fieldWithErrors {
   display: inline;
 }

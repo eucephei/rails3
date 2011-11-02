@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
-  def index
-    @comments = Comment.all
+  def index    
+    @comments = Comment.where("article_id = ? and created_at > ?", params[:article_id], Time.at(params[:after].to_i + 1))
+    
 
     respond_to do |format|
       format.html # index.html.erb
