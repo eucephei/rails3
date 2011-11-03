@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :host_id %><br />
-    <%= f.text_field :host_id %>
+    <%= f.collection_select :host_id, Host.all, :id, :name, :prompt => true %> 
   </div>
   <div class="field">
     <%= f.label :published_on %><br />
