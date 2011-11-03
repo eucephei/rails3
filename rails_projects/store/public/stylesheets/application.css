@@ -149,3 +149,13 @@ table.pretty td.price {
 .pretty th .desc {
   background-image: url(/images/down_arrow.gif);
 }
+
+
+.review {
+  border-bottom: solid 1px #999;
+}
+
+.product h2 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}

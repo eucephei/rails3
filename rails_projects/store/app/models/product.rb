@@ -1,5 +1,8 @@
 class Product < ActiveRecord::Base
+  attr_accessible :name, :price, :description
+  
   belongs_to :category
+  has_many :reviews
 
   scope :cheaper_than, lambda { |price=50| where("price < ?", price) }
   scope :cheap, cheaper_than(30)

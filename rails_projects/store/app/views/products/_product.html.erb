@@ -1,7 +1,10 @@
 <div class="product">
   <h3>
     <%= link_to product.name, product %>
-    <%= number_to_currency(product.price) %>
+    <div class="details">
+      Price: <%= number_to_currency(product.price) %> |
+      <%= link_to "Read Reviews", product_reviews_path(product) %>
+    </div>
   </h3>
   <div class="actions">
     <%= link_to "Edit", edit_product_path(product) %> |

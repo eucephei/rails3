@@ -1,7 +1,9 @@
 Store::Application.routes.draw do
   resources :orders
-  resources :products
   resources :categories
+  resources :products do
+    resources :reviews
+  end
   
   match "/p/:id" => redirect("/products/%{id}")
   match "/p" => redirect("/prod")
