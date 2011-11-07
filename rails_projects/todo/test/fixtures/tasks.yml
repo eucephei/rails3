@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  project_id: 1
+  name: MyString
+  completed_at: 2011-10-17 14:43:31
+
+two:
+  project_id: 1
+  name: MyString
+  completed_at: 2011-10-17 14:43:31
