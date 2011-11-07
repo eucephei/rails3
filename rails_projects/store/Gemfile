@@ -38,5 +38,7 @@ gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branc
 gem 'inherited_resources'
 gem 'has_scope'
 
+gem 'simple_form'
+
 
 

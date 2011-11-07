@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
-  attr_accessible :name, :price, :description
+  attr_accessible :name, :price, :released_on, :category_id, :rating, :discontinued, :description
+  validates_presence_of :name, :price
   
   belongs_to :category
   has_many :reviews

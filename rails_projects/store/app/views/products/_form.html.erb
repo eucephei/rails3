@@ -1,35 +1,28 @@
-<%= form_for(@product) do |f| %>
+<%= simple_form_for @product do |f| %>
   <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-      <ul>
-      <% @product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  	<div id="error_explanation">
+     <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+     <ul>
+     <% @product.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+     <% end %>
+     </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :category_id %><br />
-    <%= f.collection_select :category_id, Category.all, :id, :name %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.input :name %>
+  <%= f.input :price, :hint => "prices should be in Swiss Franc" %>
+  <%= f.association :category, :include_blank => false %>
+  <%= f.input :released_on %>
+  <%= f.input :rating, :collection => 1..5, :as => :radio %>
+  <%= f.input :discontinued  %>
+  <%= f.input :description %>
+
+  <%= f.button :submit %>
 <% end %>
+
+
+
+
 
 
