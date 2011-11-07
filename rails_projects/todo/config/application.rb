@@ -38,7 +38,7 @@ module Todo
     config.cookie_secret = '980734b832ad1ba050aeba757e50dcddd47e6a137eaa23286234f6a81504a8fdc818fcbf564ceceb01c2154add61930807a17b8876dfed5c6da98217627202a1'
 
     # Enable the asset pipeline
-    config.assets.enabled = true
+    config.assets.enabled = false
   
   end
 end
