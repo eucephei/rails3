@@ -12,11 +12,14 @@
 
   <%= f.input :name %>
   <%= f.input :price, :hint => "prices should be in Swiss Franc" %>
+  <%#= f.collection_select :category_id, Category.all, :id, :name %>
   <%= f.association :category, :include_blank => false %>
   <%= f.input :released_on %>
   <%= f.input :rating, :collection => 1..5, :as => :radio %>
   <%= f.input :discontinued  %>
   <%= f.input :description %>
+
+
 
   <%= f.button :submit %>
 <% end %>
