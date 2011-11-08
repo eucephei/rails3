@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.order("important desc")
     @date = params[:month] ? Date.parse(params[:month]) : Date.today
 
     respond_to do |format|
@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @article = Article.find(params[:id])
-    @comment = Comment.new(:article => @article)
+    @comment = Comment.new(:article_id => @article.id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -58,8 +58,9 @@ class ArticlesController < ApplicationController
   # PUT /articles/1
   # PUT /articles/1.json
   def update
+    params[:article].delete(:important) unless admin?
     @article = Article.find(params[:id])
-
+    
     respond_to do |format|
       if @article.update_attributes(params[:article])
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }

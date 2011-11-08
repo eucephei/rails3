@@ -126,3 +126,12 @@ body {
   font-size: 12px;
   list-style: disc;
 }
+
+#user_nav {
+  float: right;
+  font-size: 12px;
+}
+
+h1.important {
+  color: #D00;
+}

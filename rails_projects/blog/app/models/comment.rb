@@ -1,4 +1,6 @@
 class Comment < ActiveRecord::Base
-  belongs_to :article
+  attr_accessible :article_id, :author_name, :content
   validates_presence_of :author_name, :content
+    
+  belongs_to :article
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111027195140) do
+ActiveRecord::Schema.define(:version => 20111108220528) do
 
   create_table "articles", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20111027195140) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "host_id"
+    t.boolean  "important",    :default => false, :null => false
   end
 
   create_table "comments", :force => true do |t|
@@ -35,6 +36,16 @@ ActiveRecord::Schema.define(:version => 20111027195140) do
   create_table "hosts", :force => true do |t|
     t.string   "name"
     t.string   "subdomain"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.boolean  "admin",         :default => false, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
