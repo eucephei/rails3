@@ -39,21 +39,15 @@
 
 <div id="orders_chart" style="width:560px; height:300px;"></div>
 
-<table class="pretty">
-  <tr>
-    <th><%= sortable "id", "Number" %></th>
-    <th><%= sortable "purchased_at", "Purchased" %></th>
-    <th><%= sortable "shipping" %></th>
-    <th><%= sortable "total_price", "Total" %></th>
-  </tr>
-  <% for order in @orders %>
-    <tr>
-      <td><%= order.id %></td>
-      <td><%= order.purchased_at.to_s(:long) %></td>
-      <td><%= order.shipping ? "Yes" : "No" %></td>
-      <td class="price"><%= number_to_currency(order.total_price) %></td>
-    </tr>
-  <% end %>
-</table>
+<%= form_tag orders_path, :method => 'get', :id => "orders_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search By Price", :name => nil %>
+  </p>
 
-<%= will_paginate(@orders) %>
+  <div id="orders">
+	<%= render 'orders' %>
+  </div>
+<% end %>
+
+<p><%= link_to "New Order", new_order_path %></p>
