@@ -32,7 +32,7 @@
     <%= f.text_area :content, :rows => "10", :cols => "50" %>
   </div>
   <div class="field">
-  <% if admin? %>
+  <% if @admin %>
     <%= f.check_box :important %>
     <%= f.label :important %>
   <% end %>
