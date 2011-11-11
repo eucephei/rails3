@@ -1,4 +1,5 @@
 Anycity::Application.routes.draw do
+  resources :users
   resources :cities
   root :to => 'cities#index'
   
