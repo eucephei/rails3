@@ -1,0 +1,4 @@
+$("#orders").html("<%= escape_javascript(render("orders")) %>");
+
+document.title = "<%= escape_javascript("#{params[:search].to_s.titleize} Orders by 
+#{(params[:sort] || 'name').titleize} - Page #{params[:page] || 1}") %>";
