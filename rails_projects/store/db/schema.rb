@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111107230538) do
+ActiveRecord::Schema.define(:version => 20111113232836) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(:version => 20111107230538) do
     t.decimal  "total_price"
     t.datetime "purchased_at"
     t.boolean  "shipping"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "page_requests", :force => true do |t|
+    t.string   "path"
+    t.float    "page_duration"
+    t.float    "view_duration"
+    t.float    "db_duration"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -3,6 +3,7 @@ class Order < ActiveRecord::Base
   
   def self.search(search)
     if search
+      ActiveSupport::Notifications.instrument("orders.search", :search => search)
       where('total_price LIKE ?', "%#{search}%")
     else
       scoped

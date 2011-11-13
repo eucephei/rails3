@@ -1,0 +1,29 @@
+<h1>Page Requests Notifications</h1>
+
+<table>
+  <tr>
+    <th>Path</th>
+    <th>Page duration</th>
+    <th>View duration</th>
+    <th>Db duration</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @page_requests.each do |page_request| %>
+  <tr>
+    <td><%= page_request.path %></td>
+    <td><%= page_request.page_duration %></td>
+    <td><%= page_request.view_duration %></td>
+    <td><%= page_request.db_duration %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<p>
+ <%= link_to 'Orders', orders_path %> |
+ <%= link_to 'Products', products_path %> 
+</p>

@@ -1,4 +1,6 @@
 Store::Application.routes.draw do
+  resources :page_requests
+
   resources :orders
   resources :categories
   resources :products do
