@@ -3,11 +3,13 @@ ListMaker::Application.routes.draw do
   # match "/application.manifest" => Rails::Offline
   offline = Rack::Offline.configure do
      cache "assets/application.js"
+     cache "assets/jquery.offline.js"
+     cache "assets/jquery.tmpl.js"
+     cache "assets/json.js"
      cache "assets/application.css"     
      public_path = Rails.root.join("public")
      Dir[public_path.join("*.html"),
-         public_path.join("*/*.*")
-         ].each do |file|
+         public_path.join("*/*.*")].each do |file|
        p = Pathname.new(file)
        cache p.relative_path_from(public_path)
      end
