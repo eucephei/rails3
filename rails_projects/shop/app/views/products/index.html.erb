@@ -1,0 +1,22 @@
+<% title "Products" %>
+
+<%= form_tag products_path, :method => "get" do %>
+  <p>
+	<%= text_field_tag :search, params[:search] %>
+	<%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<% for product in @products %>
+  <div class="product">
+    <h2><%= link_to product.name, product %></h2>
+    <div class="details">
+      <%= number_to_currency(product.price) %> |
+      <%= link_to "Edit", edit_product_path(product) %> |
+      <%= link_to "Destroy", product, :method => :delete %>
+    </div>
+  </div>
+<% end %>
+
+<p><%= link_to "New Product", new_product_path %></p>
+
