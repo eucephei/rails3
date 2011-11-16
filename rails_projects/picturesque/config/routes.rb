@@ -1,8 +1,10 @@
 Picturesque::Application.routes.draw do
+  root :to => "galleries#index"
+
   resources :paintings
   resources :galleries
   
-  root :to => "galleries#index"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
