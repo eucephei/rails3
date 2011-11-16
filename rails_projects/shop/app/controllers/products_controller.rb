@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   
   def index
-    @products = Product.where("name LIKE ?", "%#{params[:search]}%")
+    @products = Product.where("name LIKE ?", "%#{params[:search]}%").page(params[:page]).per(5)
   end
   
   def show

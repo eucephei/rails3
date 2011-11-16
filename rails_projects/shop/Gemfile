@@ -36,3 +36,5 @@ gem 'rack' , '1.3.3'
 gem "nifty-generators"
 
 gem 'paper_trail'
+
+gem 'kaminari'
