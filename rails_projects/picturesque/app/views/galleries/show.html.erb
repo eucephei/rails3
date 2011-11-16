@@ -3,7 +3,7 @@
 <div id="paintings">
   <% for painting in @gallery.paintings %>
     <div class="painting">
-      <%= image_tag painting.image_url.to_s %>
+      <%= image_tag painting.image_url(:thumb) if painting.image? %>
       <div class="name"><%= painting.name %></div>
       <div class="actions">
         <%= link_to "edit", edit_painting_path(painting) %> |
