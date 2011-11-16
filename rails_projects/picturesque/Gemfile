@@ -39,5 +39,6 @@ gem "nifty-generators"
 gem "carrierwave"
 
 # brew install -f imagemagick --disable-openmp
+# brew upgrade -f imagemagick --disable-openmp
 # sudo gem install rmagick
 gem 'rmagick'			
