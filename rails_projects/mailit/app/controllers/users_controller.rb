@@ -81,4 +81,18 @@ class UsersController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  private 
+  
+  def users
+    @users ||= User.all
+  end
+  helper_method :users
+  
+  def user
+    @user ||= params[:id] ? User.find(params[:id]) : User.new(params[:id])
+  end
+  helper_method :users
+  
+  
 end
