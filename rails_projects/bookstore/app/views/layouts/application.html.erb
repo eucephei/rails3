@@ -3,7 +3,7 @@
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Bookstore" %></title>
     <%= stylesheet_link_tag "application", "token-input-facebook" %>
-    <%= javascript_include_tag "applicaton", "jquery.tokeninput" %>
+    <%= javascript_include_tag "application", "jquery.tokeninput" %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
