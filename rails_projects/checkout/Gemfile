@@ -31,3 +31,8 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+
+gem 'jasmine', :group => [:development, :test]
+# rails g jasmine:install
+# rake jasmine
+# curl http://cloud.github.com/downloads/velesin/jasmine-jquery/jasmine-jquery-1.2.0.js > spec/javascripts/helpers/jasmine_jquery-1.2.0.js
