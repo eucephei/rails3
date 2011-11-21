@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-     # format.json { render json: @messages }
+      format.json { render json: @messages }
     end
   end
 
@@ -25,7 +25,7 @@ class MessagesController < ApplicationController
   # GET /messages/new
   # GET /messages/new.json
   def new
-    @message = Message.new
+    @message = Message.new(:parent_id => params[:parent_id])
 
     respond_to do |format|
       format.html # new.html.erb
