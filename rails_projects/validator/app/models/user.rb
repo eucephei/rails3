@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   validates_format_of :username, :with => /^[-\w\._@]+$/i, :allow_blank => true, :message => "should only contain letters, numbers, or .-_@"
   validates_length_of :password, :minimum => 4, :allow_blank => true
   validates_confirmation_of :password
+  validates_uniqueness_of :username, :email
+  
+  validates :email, :email_format => true # see locale/en.yml, lib/email_format_validator.rb
 
   # login can be either username or email address
   def self.authenticate(login, pass)

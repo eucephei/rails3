@@ -3,7 +3,7 @@
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Validator" %></title>
     <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "application", "rails.validations.custom" %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
