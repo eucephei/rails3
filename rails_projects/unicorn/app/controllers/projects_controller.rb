@@ -1,8 +1,11 @@
 class ProjectsController < ApplicationController
+
+  stream
+
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.scoped
 
     respond_to do |format|
       format.html # index.html.erb
