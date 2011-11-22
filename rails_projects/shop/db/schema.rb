@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111116222744) do
+ActiveRecord::Schema.define(:version => 20111122231718) do
+
+  create_table "orders", :force => true do |t|
+    t.string   "credit_card_number"
+    t.date     "credit_card_expires_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "products", :force => true do |t|
     t.string   "name"

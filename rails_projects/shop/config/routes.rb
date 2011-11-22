@@ -1,8 +1,9 @@
 Shop::Application.routes.draw do
+  resources :orders
+  resources :products
 
   match "/versions/:id/revert" => "versions#revert", :as => "revert_version"
   
-  resources :products
   root :to => "products#index"
   
   # The priority is based upon order of creation:
