@@ -12,6 +12,8 @@ Shopping::Application.configure do
   config.serve_static_assets = false
 
   # Compress JavaScripts and CSS
+  config.assets.js_compressor  = :uglifier
+  config.assets.css_compressor = :scss
   config.assets.compress = true
 
   # Specifies the header that your server uses for sending files
