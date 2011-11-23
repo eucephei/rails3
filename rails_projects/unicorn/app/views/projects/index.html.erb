@@ -13,17 +13,17 @@
     <th></th>
     <th></th>
   </tr>
-
-<% @projects.each do |project| %>
-  <tr>
-    <td><%= project.name %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+  <div class="projects">
+ 	<% @projects.each do |project| %>
+  	  <div class="project">
+    	<h2><%= link_to project.name, project %></h2>
+    	<%= link_to "Edit", edit_project_path(project) %> |
+    	<%= link_to "Destroy", project, :method => :delete, :confirm => "Are you sure?" %>
+  	  </div>
+	<% end %>
+  </div>
 </table>
 
 <br />
 
-<%= link_to 'New Project', new_project_path %>
+<%= link_to 'New Project', new_project_path, :class => "new_project" %>
