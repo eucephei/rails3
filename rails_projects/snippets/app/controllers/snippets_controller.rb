@@ -1,4 +1,23 @@
 class SnippetsController < ApplicationController
+  
+  def index
+    @snippets = Snippet.scoped
+  end
+  
+  def edit
+    @snippet = Snippet.find(params[:id])
+  end
+  
+  def update
+    @snippet = Snippet.find(params[:id])
+    
+    if @order.update_attributes(params[:snippet])
+        redirect_to @snippet, notice: 'Snippet was successfully updated.'
+    else
+        render action: "edit"
+    end
+  end
+  
   def new
     @snippet = Snippet.new
   end
@@ -18,4 +37,12 @@ class SnippetsController < ApplicationController
   def show
     @snippet = Snippet.find(params[:id])
   end
+  
+  def destroy
+    @snippet = Snippet.find(params[:id])
+    @snippet.destroy
+
+    redirect_to snippets_url
+  end  
+  
 end

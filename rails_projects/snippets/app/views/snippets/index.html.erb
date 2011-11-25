@@ -4,8 +4,6 @@
   <tr>
     <th>Name</th>
     <th>Language</th>
-    <th>Plain code</th>
-    <th>Highlighted code</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,8 +14,6 @@
   <tr>
     <td><%= snippet.name %></td>
     <td><%= snippet.language %></td>
-    <td><%= snippet.plain_code %></td>
-    <td><%= snippet.highlighted_code %></td>
     <td><%= link_to 'Show', snippet %></td>
     <td><%= link_to 'Edit', edit_snippet_path(snippet) %></td>
     <td><%= link_to 'Destroy', snippet, confirm: 'Are you sure?', method: :delete %></td>

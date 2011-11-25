@@ -31,3 +31,8 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+
+ # brew install redis
+ # redis-server /opt/local/etc/redis.conf
+ # gem 'resque', :require => "resque/server"
+ # rake resque:work QUEUE='*'
