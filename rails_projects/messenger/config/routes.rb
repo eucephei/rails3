@@ -1,6 +1,8 @@
 Messenger::Application.routes.draw do
+  resources :articles
+
   resources :messages
-  root :to => "messages#new"
+  root :to => "messages#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

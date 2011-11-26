@@ -31,3 +31,12 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+
+gem 'redcarpet'
+gem 'albino'
+gem 'nokogiri'
+
+gem 'pygmentize'   
+ # ``` ruby
+ # 	puts "hello"
+ # ``` 

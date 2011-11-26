@@ -1,0 +1,10 @@
+<% title "Messages" %>
+
+<% unless @messages.nil? %>
+ <% for message in @messages %>
+  <h2><%= link_to message.name, message %></h2>
+  <p><%= message.content %></p>
+ <% end %>
+<% end %>
+
+<p><%= link_to "New Message", new_message_path %></p>
