@@ -89,3 +89,8 @@ form .field, form .actions {
 .error_messages ul {
   margin: 15px 0;
 }
+
+input[type=checkbox] {
+  float: left;
+  margin-right: 8px;
+}
