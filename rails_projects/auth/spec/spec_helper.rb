@@ -32,5 +32,13 @@ RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
   
   config.include(MailerMacros)
-  config.before(:each) { reset_email }
+  
+  # config.before(:each) { reset_email }
+  config.before(:each) do
+    reset_email
+    
+    Timecop.return
+    FakeWeb.clean_registry
+  end
+  
 end

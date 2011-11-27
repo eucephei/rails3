@@ -42,6 +42,9 @@ group :test do
   gem "factory_girl_rails"
   gem "capybara"
   gem "guard-rspec"
+
+  gem "timecop"
+  gem "fakeweb"
 end
 gem 'rb-fsevent' # rails g rspec:install
 

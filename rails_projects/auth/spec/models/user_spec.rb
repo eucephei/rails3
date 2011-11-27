@@ -11,9 +11,17 @@ describe User do
       user.password_reset_token.should_not eq(last_token)
     end
 
-    it "saves the time the password reset was sent" do
+    it "verifies the password reset was sent" do
       user.send_password_reset
       user.reload.password_reset_sent_at.should be_present
+    end
+    
+    it "saves the time the password reset was sent" do
+      Timecop.freeze
+      user.send_password_reset
+      Time.use_zone("Paris") do
+        user.reload.password_reset_sent_at.should eq(Time.zone.now)
+      end
     end
 
     it "delivers email to user" do
