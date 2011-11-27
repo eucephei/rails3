@@ -47,6 +47,7 @@ gem 'rb-fsevent'
 # rails g rspec:install
 # rake db:test:prepare
 # guard init rspec
+# guard
 
 
 
