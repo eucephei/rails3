@@ -1,4 +1,8 @@
 class PasswordResetsController < ApplicationController
+  
+  def index
+  end
+  
   def new
   end
 

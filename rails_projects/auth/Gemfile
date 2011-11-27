@@ -36,3 +36,15 @@ gem 'rack' , '1.3.3'
 gem "nifty-generators"
 
 gem "bcrypt-ruby", :require => "bcrypt"
+
+gem "rspec-rails", :group => [:test, :development]
+group :test do
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "guard-rspec"
+end
+# rails g rspec:install
+# guard init rspec
+gem 'rb-fsevent'
+# rake db:test:prepare
+

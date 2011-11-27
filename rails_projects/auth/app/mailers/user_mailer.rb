@@ -1,3 +1,5 @@
+# rails g mailer user_mailer password_reset
+
 class UserMailer < ActionMailer::Base
   default from: "from@example.com"
 
