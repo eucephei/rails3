@@ -43,8 +43,8 @@ group :test do
   gem "capybara"
   gem "guard-rspec"
 end
-gem 'rb-fsevent'
-# rails g rspec:install
+gem 'rb-fsevent' # rails g rspec:install
+
 # rake db:test:prepare
 # guard init rspec
 # guard
