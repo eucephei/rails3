@@ -38,7 +38,7 @@ RSpec.configure do |config|
     reset_email
     
     Timecop.return
-    FakeWeb.clean_registry
+    # FakeWeb.clean_registry
   end
   
 end

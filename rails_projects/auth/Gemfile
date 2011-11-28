@@ -37,19 +37,18 @@ gem "nifty-generators"
 
 gem "bcrypt-ruby", :require => "bcrypt"
 
-gem "rspec-rails", :group => [:test, :development]
+gem "rspec-rails", :group => [:test, :development]			# rails g rspec:install
 group :test do
   gem "factory_girl_rails"
   gem "capybara"
   gem "guard-rspec"
 
   gem "timecop"
-  gem "fakeweb"
+  # gem "fakeweb"
 end
-gem 'rb-fsevent' # rails g rspec:install
+gem 'rb-fsevent' 											# guard init rspec
 
 # rake db:test:prepare
-# guard init rspec
 # guard
 
 
