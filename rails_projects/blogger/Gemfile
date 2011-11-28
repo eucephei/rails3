@@ -34,3 +34,15 @@ group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
 end
+
+gem 'sunspot_rails'								# rails g sunspot_rails:install
+group :development do
+  gem 'sunspot_solr'							# rake sunspot:solr:start
+  gem 'progress_bar'							# rake sunspot:reindex
+end												
+									
+
+	
+	
+	
+	
