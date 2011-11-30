@@ -34,3 +34,10 @@ group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
 end
+
+gem 'activeadmin'			# require gem 'sass-rails'
+ # rails g active_admin:install
+ # rake db:migrate
+ # In http://localhost:3000/admin/login User: admin@example.com Password:password
+ # rails g active_admin:resource product	
+ # See http://localhost:3000/admin/products
