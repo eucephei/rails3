@@ -1,8 +1,14 @@
 Authenticate::Application.routes.draw do
+  resources :users
+  resources :sessions
 
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
   get "secret" => "home#secret", :as => "secret"
+  
   root :to => "home#index"
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

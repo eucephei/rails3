@@ -34,3 +34,8 @@ group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
 end
+
+gem 'sorcery'						
+ # rails generate sorcery:install remember_me
+ # rails g controller users new create destroy
+ # rails g controller sessions new
