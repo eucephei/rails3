@@ -36,3 +36,6 @@ group :test do
 end
 
 gem 'redcarpet'
+gem 'bluecloth'  		# markdown
+gem 'draper'
+ # rails g draper:decorator user
