@@ -1,15 +1,10 @@
-<p id="notice"><%= notice %></p>
+<div id="subscription">
+  <h1>Your Subscription</h1>
+  <p>You have signed up for the <strong><%= @subscription.plan.name %></strong> plan which includes <strong><%= @subscription.plan.kisses %> llama kisses</strong> for just <strong><%= number_to_currency @subscription.plan.price %></strong> per month!</p>
+</div>
 
+</br>
 <p>
-  <b>Plan:</b>
-  <%= @subscription.plan_id %>
+ <%= link_to 'Edit', edit_subscription_path(@subscription) %> |
+ <%= link_to 'Back', subscriptions_path %>
 </p>
-
-<p>
-  <b>Email:</b>
-  <%= @subscription.email %>
-</p>
-
-
-<%= link_to 'Edit', edit_subscription_path(@subscription) %> |
-<%= link_to 'Back', subscriptions_path %>
