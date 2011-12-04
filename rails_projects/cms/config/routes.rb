@@ -1,6 +1,9 @@
 Cms::Application.routes.draw do
-
-  resources :pages
+  Mercury::Engine.routes
+  
+  resources :pages do
+    member { post :mercury_update }
+  end
   
   root to: 'pages#index'
     
