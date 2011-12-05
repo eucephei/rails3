@@ -381,6 +381,9 @@ window.Mercury = {
 // The mercury:loaded event is provided in case you want to override default Mercury Editor behavior.  It will fire
 // directly after the Mercury scripts have loaded, but before anything has been initialized.  It's a good place to add
 // or change functionality.
+// jQuery(window).bind('mercury:loaded', function() {
+//   Mercury.PageEditor.prototype.iframeSrc = function(url) { return '/testing'; }
+// });
 
 $(window).bind('mercury:ready', function() {
   var link = $('#mercury_iframe').contents().find('#edit_link');
@@ -391,7 +394,3 @@ $(window).bind('mercury:ready', function() {
 $(window).bind('mercury:saved', function() {
   window.location = window.location.href.replace(/\/editor\//i, '/');
 });
-
-// jQuery(window).bind('mercury:loaded', function() {
-  //Mercury.PageEditor.prototype.iframeSrc = function(url) { return '/testing'; }
-// });
