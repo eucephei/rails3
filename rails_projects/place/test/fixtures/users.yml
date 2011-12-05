@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  email: 
+  gender: MyString
+  bio: MyText
+  public_profile: false
+
+two:
+  name: MyString
+  email: 
+  gender: MyString
+  bio: MyText
+  public_profile: false
