@@ -1,9 +1,14 @@
 AuthOmni::Application.routes.draw do
+  resources :identities
   resources :users
   
   match "/auth/:provider/callback", to: "sessions#create"
   match "/auth/failure", to: "sessions#failure"
   match "/logout", to: "sessions#destroy", :as => "logout"
+  
+  match "/auth/facebook", to: redirect {"http://facebook.com"}
+  match "/auth/twitter", to: redirect {"http://twitter.com"}
+  match "/auth/google_apps", to: redirect {"http://gmail.com"}
 
   root to: "sessions#new"
 

@@ -17,3 +17,4 @@ class SessionsController < ApplicationController
     redirect_to root_url, alert: "Authentication failed, please try again."
   end
 end
+
